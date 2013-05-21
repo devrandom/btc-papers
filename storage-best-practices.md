@@ -1,4 +1,7 @@
 # Introduction
+
+DRAFT 1, 2013-04-01
+
 Bitcoin (BTC) has recently reached and passed US$1 Billion in total
 valuation: ~11 million BTC at $91 per coin, up from $14 per coin in
 January 2013.
@@ -73,7 +76,9 @@ transaction.
 ## Embezzlement
 An authorized person with access to the private keys may embezzle the
 bitcoins.
+
 # Security Building Blocks
+
 ## Cold Storage
 Cold (offline) storage of private keys protects against disclosure of
 the keys as a result of network attacks.  Cold storage is the minimum
@@ -91,6 +96,7 @@ The procedure for using offline keys is:
 * Broadcast the signed transaction
 Threats mitigated: private key disclosure through the network,
 transaction injection, destination modification.
+
 ## Encrypted storage
 The cold storage private key may be encrypted with a password in order
 to defend against physical theft.  In fact, it is often best to
@@ -111,31 +117,38 @@ Threats mitigated: all.  Each of the threats described above is
 mitigated by replacing single points of potential failures with
 multiple ones.  Multiple point of failure must be exploited
 concurrently, making the attack much more difficult.
+
 ## Secret Sharing
 Secret-sharing (ref. Shamir) algorithms can be use to spread the
 control of a single key among multiple people.  However, this method
 is not as powerful as multi-signatures, because a single point of
 failure exists once the key is reconstructed during the signing process.
+
 ## Physical security
 Private keys may be further protected from disclosure by physical
 access controls.
+
 ## Financial controls
 Participants can compare the proposed transaction to financial
 records.  For example, if the withdrawal beneficiary did not actually
 have the balance to be moved, or there is no signed request from the
 beneficiary, the transaction can be vetoed.
 Threats mitigated: transaction injection, embezzlement.
+
 # Sample Security Designs
 ## Level 0
 Cold/encrypted storage.
+
 ## Level 1
 Cold/encrypted storage with 2-of-3 multi-signature.  Three officers of
 the company hold keys offline.
+
 ## Level 2
 Cold/encrypted storage with 5-of-9 multi-signature.  Four officers and
 five external trustees hold keys in secure vaults.  Some of the vaults
 require additional procedures to unlock.  Each key is stored in three
 vaults for backup.
+
 # Conclusion
 Although Bitcoin presents new security risks due to its irreversible
 nature, it also provides new tools to mitigate these risks.  The

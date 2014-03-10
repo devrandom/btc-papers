@@ -2,15 +2,9 @@
 DRAFT 1, 2014-03-09
 Author: devrandom (Miron Cuperman)
 
-Bitcoin hardware wallets are a very promising technology.
-Since the private key never has to leave the device, the security
-of the coins could approach that of cold storage.
+Bitcoin hardware wallets are a very promising technology. Since the private key never has to leave the device, the security of the coins could approach that of cold storage.
 
-However, with wide adoption hardware wallets present a very tempting target.  
-Once enough wealth is controlled by a wallet model, attacking the supply
-chain of the wallet becomes attractive.
-Malware could be inserted in hardware or software.
-The random seed could be generated in a way that is predictable to the attacker or the seed could be leaked.
+However, with wide adoption hardware wallets present a very tempting target.   Once enough wealth is controlled by a specific hardware wallet model, attacking the supply chain of the wallet becomes attractive. Malware could be inserted in hardware or software. The random seed could be generated in a way that is predictable to the attacker or the seed could be leaked.
 
 In this paper we present possible solutions to make hardware wallets trustworthy even when the hardware and software are not.
 

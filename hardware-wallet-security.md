@@ -29,17 +29,18 @@ The random number generator could be subverted.  To protect against this, we hav
 The two seeds generate two different master keypairs.  Because of the linear property of [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_DSA), if we add the private keys to get a final private key the matching final public key is the addition of the individual public keys.  The protocol runs as follows:
 
 * Each side generates a seed, and derives the master keypair
-* Each side commits to their master public key by sending the hash of the key to the other side
-* The sides exchange the public keys and check that the hashes match
-* The computer records the sum of the public keys as the final public key
-* The computer sends its seed to the device, which records it and generates the final private key
+* Wallet sends wallet public key A
+* Warden sends warden private key b
+* Final public key is bA
+* Device computes final private key ab
+* abG = Ab
 * Addresses are generated from the final public key recorded by the computer, while signatures are performed using the final private key recorded by the device
 
 The device cannot generate a predictable final key because it cannot predict the key sent by the computer.
 
 ## The Subliminal Channel
 
-The subliminal channel of ECDSA can be closed by forcing the free variables in the signature to be unpredictable to the hardware wallet.  This can be simply be done by choosing the signature free variable k with an algorithm similar to the one in the previous section.  Some additional approaches are presented in the citation section below but they seem unnecessarily complex.
+The subliminal channel of ECDSA can be closed by forcing the free variables in the signature to be unpredictable to the hardware wallet.  Some approaches are presented in the citation section below.
 
 ## Multisignatures
 

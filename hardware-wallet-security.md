@@ -1,6 +1,7 @@
 # The Problem with Bitcoin Hardware Wallets (and possible solutions)
-DRAFT 1, 2014-03-09
-Author: devrandom (Miron Cuperman)
+DRAFT 2, 2014-03-09
+
+Authors: devrandom (Miron Cuperman), Chris Taylor
 
 Bitcoin hardware wallets are a very promising technology. Since the private key never has to leave the device, the security of the coins could approach that of cold storage.
 

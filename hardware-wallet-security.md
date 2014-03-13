@@ -41,7 +41,7 @@ The device cannot generate a predictable final key because it cannot predict the
 
 ## The Subliminal Channel
 
-The subliminal channel of ECDSA can be closed by forcing the free variables in the signature to be unpredictable to the hardware wallet.  Some approaches are presented in the citation section below.
+The subliminal channel of ECDSA can be closed by forcing the free variable in the signature to be unpredictable to the hardware wallet.  Some approaches are presented in the citation section below.
 
 ## Multisignatures
 
@@ -55,6 +55,7 @@ This solution could be combined with the other two for a stronger overall system
 
 Citations:
 
+* [Firmcoins - No subliminal channel](http://firmcoin.com/?p=52)
 * [Simmons, Gustavus J. "The history of subliminal channels." Selected Areas in Communications, IEEE Journal on 16.4 (1998): 452-462.](http://www.cs.gmu.edu/~zduric/cs803/Simmons.pdf)
 * [The subliminal channel and digital signatures](https://dl.acm.org/citation.cfm?id=20202)
 * [Study on Closing the Subliminal Channel Based on ECDSA Digital

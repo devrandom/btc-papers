@@ -5,7 +5,7 @@
 - Mitigate centralization pressures by introducing a POW that does not have economies of scale
 - Introduce an intermediary confirmation point, reducing the impact of mining power fluctuations
 
-Note however that choice of a suitable POW will require deep analysis.  Some pitfals include: botnet mining, POWs that seem ASIC resistant but are not, unexpected/covert optimization.
+Note however that choice of a suitable POW will require deep analysis.  Some pitfalls include: botnet mining, POWs that seem ASIC resistant but are not, unexpected/covert optimization.
 
 In particular, unexpected/covert optimizations, such as ASCIBOOST, present a potential centralizing and destabilizing force.
 

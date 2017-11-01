@@ -7,6 +7,10 @@ This writeup investigates the introduction of an auxiliary POW through a soft-fo
 - Mitigate centralization pressures by introducing a POW that does not have economies of scale
 - Introduce an intermediary confirmation point, reducing the impact of mining power fluctuations
 
+Note however that choice of a suitable POW will require deep analysis.  Some pitfals include: botnet mining, POWs that seem ASIC resistant but are not, unexpected/covert optimization.
+
+In particular, unexpected/covert optimizations, such as ASCIBOOST, present a potential centralizing and destabilizing force.
+
 ## Design
 
 ### Aux POW intermediate block

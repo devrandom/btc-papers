@@ -2,7 +2,6 @@
 
 This writeup investigates the introduction of an auxiliary POW through a soft-fork.
 
-
 ## Motivation:
 
 - Mitigate centralization pressures by introducing a POW that does not have economies of scale
@@ -12,9 +11,10 @@ This writeup investigates the introduction of an auxiliary POW through a soft-fo
 
 ### Aux POW intermediate block
 
-Auxiliary POW blocks are introduced between normal blocks.  Each aux-POW block points to the previous
-normal block and contains transactions just like a normal block.  Each normal block points to the previous
-aux-POW block and must contain all transactions from the aux-POW block.  Block space is not increased.
+Auxiliary POW blocks are introduced between normal blocks - i.e. the chain alternates between the two POWs.
+Each aux-POW block points to the previous normal block and contains transactions just like a normal block.
+Each normal block points to the previous aux-POW block and must contain all transactions from the aux-POW block.
+Block space is not increased.
 
 The new intermediate block and the pointers are introduced via a soft-fork restriction.
 
@@ -71,6 +71,23 @@ transferred.
 the coins will increase in value due to improved security properties.
 
 ## Open Questions
+
+- After a block of one type is found, we can naively assume that POW will become idle while a block of the other type is being mined.  In practice, the spare capacity can be used to find alternative ("attacking") blocks or mine other coins.  Is that a problem?
+- Is selfish mining amplified by this scheme for miners that have both types of hardware?
+
+## POW candidates
+
+- SHA256 (i.e. use same POW, but introduce an intermediate block for faster confirmation)
+- Proof of Space and Time (Bram Cohen)
+- Equihash
+- Ethash
+
+## Next Steps
+
+- evaluate POW candidates
+- simulate miner behavior to identify if there are incentives for detrimental behavior patterns (e.g. block withholding / selfish mining)
+- Protocol details
+
 
 ## Credits
 

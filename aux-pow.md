@@ -1,7 +1,5 @@
 # Soft-fork Introduction of a New POW
 
-This writeup investigates the introduction of an auxiliary POW through a soft-fork.
-
 ## Motivation:
 
 - Mitigate centralization pressures by introducing a POW that does not have economies of scale

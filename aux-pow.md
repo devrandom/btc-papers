@@ -87,6 +87,7 @@ the coins will increase in value due to improved security properties.
 ## Next Steps
 
 - evaluate POW candidates
+- evaluate difficulty adjustment rules
 - simulate miner behavior to identify if there are incentives for detrimental behavior patterns (e.g. block withholding / selfish mining)
 - Protocol details
 

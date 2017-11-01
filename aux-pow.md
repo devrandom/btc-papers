@@ -1,4 +1,4 @@
-# Softfork Introduction of a New POW
+# Soft-fork Introduction of a New POW
 
 This writeup investigates the introduction of an auxiliary POW through a soft-fork.
 

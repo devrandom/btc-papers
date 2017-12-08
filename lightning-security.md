@@ -22,7 +22,7 @@ The revocation path allows the counterparty to take all funds as penalty if an o
 * The commitment transaction is not published unless something goes wrong
 
 Closing:
-* A closing transaction is published
+* A closing transaction is published.  The destinations are specified in the closing message.
 
 # Keys
 
@@ -52,30 +52,37 @@ Also, if the funding keys are compromised, a closing transaction can output our 
 
 If the revocation keys are compromised, and the remote end is malicious, it can exercise the penalty transaction.
 
-## Delayed channel closing keys
+## Channel closing destination (normal close)
+
+These can be anything, and if a node is compromised channel balance will be lost.
+The channel closing transaction is signed by the funding keys.
+
+## Delayed channel closing keys (abrupt close)
 
 If the delayed channel closing keys are compromised, and the remote end is malicious, an old commitment can be published
 and the penalty transaction will take all channel funds.
 
 Mitigation: these keys are not needed during normal channel operation and don't need to be continuously online.
 
-## Channel closing keys
+## Channel closing keys (abrupt close)
 
 These keys don't need to be continously online.
 
 # Discussion
 
 In the current protocol, the entire channel balance is at risk.
-As more payments move to lightning channels, the liquidity controlled by lightning nodes will be a significant fraction of all Bitcoin.
+As more payments move to lightning channels, the liquidity controlled by lightning nodes will be a significant fraction of all Bitcoin, so this is a significant barrier to adoption.
 
-Here are some potential ways to secure Lightning balances:
-* enhance the current protocol to allow for multisig whereever CHECKSIG is used
+Here are some potential ways to secure Lightning channel balances:
+
+* enhance the current protocol to allow for multisig wherever CHECKSIG is used
 * adopt Schnorr signatures to allow for off-chain multisig setup and signing
+** TBD need to verify that the key derivation mechanisms doesn't interfere the Schnorr multisig protocol
 
 Schnorr would be preferred, due to the lower on-chain space utilization and increased utility.
-However, the timeline for Schnorr adoption is unclear.
+However, the timeline for Schnorr adoption in Bitcoin is unclear.
 
 # References
 
-Schnorr multisig by sipa - https://github.com/sipa/secp256k1/blob/968e2f415a5e764d159ee03e95815ea11460854e/src/modules/schnorr/schnorr.md
-BOLT-3 blog post by Rusty - https://medium.com/@rusty_lightning/the-bitcoin-lightning-spec-part-4-8-bitcoin-transaction-and-script-formats-246609394b0a
+* Schnorr multisig protoco, by sipa - https://github.com/sipa/secp256k1/blob/968e2f415a5e764d159ee03e95815ea11460854e/src/modules/schnorr/schnorr.md
+* BOLT-3 blog post, by Rusty - https://medium.com/@rusty_lightning/the-bitcoin-lightning-spec-part-4-8-bitcoin-transaction-and-script-formats-246609394b0a

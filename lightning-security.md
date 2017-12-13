@@ -27,6 +27,7 @@ Closing:
 # Keys
 
 Lightning uses the following types of keys:
+* Hot wallet keys, used to create the funding transaction
 * Funding keys, used to sign commitment transactions
 * Channel closing keys, the destination of remote funds on abrupt channel close
 * Delayed channel closing keys, for sending local funds on abrupt channel close with a delay to allow for penalty transaction
@@ -41,6 +42,10 @@ making them unpredictable.
 The revocation keys have further structure, allowing a penalty-enforcing watcher to work with limited storage.
 
 # Attack Vectors
+## Hot wallet keys
+
+These control plain bitcoin balances, and their compromise leads to the loss of the hot wallet.
+
 ## Funding keys
 
 If the funding keys are compromised, any amount can be pushed through the channel.  If the remote end is malicious,
@@ -77,7 +82,7 @@ Here are some potential ways to secure Lightning channel balances:
 
 * enhance the current protocol to allow for multisig wherever CHECKSIG is used
 * adopt Schnorr signatures to allow for off-chain multisig setup and signing
-** TBD need to verify that the key derivation mechanisms doesn't interfere the Schnorr multisig protocol
+ * TBD need to verify that the key derivation mechanisms doesn't interfere the Schnorr multisig protocol
 
 Schnorr would be preferred, due to the lower on-chain space utilization and increased utility.
 However, the timeline for Schnorr adoption in Bitcoin is unclear.
